@@ -43,9 +43,6 @@ EOF
 cat $NGINX_CONF;
 
 mkdir -p /run/nginx;
-addgroup nginx --gid 1099
-adduser nginx --disabled-password --uid 1099 --ingroup nginx --no-create-home --home /run/nginx
-
 chown -R nginx:nginx /var/lib/nginx /run/nginx ;
 
 exec nginx -c $NGINX_CONF
